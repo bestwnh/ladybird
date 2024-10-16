@@ -89,6 +89,7 @@ static constexpr CGFloat const SEARCH_FIELD_WIDTH = 300;
     [self setHidden:NO];
     [self setSearchTextFromPasteBoard];
 
+    NSLog(@"!!! find");
     [self.window makeFirstResponder:self.search_field];
 }
 
@@ -121,6 +122,7 @@ static constexpr CGFloat const SEARCH_FIELD_WIDTH = 300;
         [self.search_field setStringValue:query];
         [[[self tab] web_view] findInPage:query caseSensitivity:m_case_sensitivity];
 
+        NSLog(@"!!! useSelectionForFind");
         [self.window makeFirstResponder:self.search_field];
     }
 }

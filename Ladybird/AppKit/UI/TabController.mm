@@ -217,6 +217,7 @@ static NSString* const TOOLBAR_TAB_OVERVIEW_IDENTIFIER = @"ToolbarTabOverviewIde
 
 - (void)focusLocationToolbarItem
 {
+    NSLog(@"!!! focusLocationToolbarItem");
     [self.window makeFirstResponder:self.location_toolbar_item.view];
 }
 
@@ -706,6 +707,7 @@ static NSString* const TOOLBAR_TAB_OVERVIEW_IDENTIFIER = @"ToolbarTabOverviewIde
         [self loadURL:*url];
     }
 
+    NSLog(@"!!! NSSearchFieldDelegate makeFirstResponder:nil");
     [self.window makeFirstResponder:nil];
     return YES;
 }

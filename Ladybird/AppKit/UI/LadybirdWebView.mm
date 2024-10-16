@@ -1580,6 +1580,7 @@ static void copy_data_to_clipboard(StringView data, NSPasteboardType pasteboard_
 
 - (void)mouseDown:(NSEvent*)event
 {
+    NSLog(@"!!! mouseDown");
     [[self window] makeFirstResponder:self];
 
     auto mouse_event = Ladybird::ns_event_to_mouse_event(Web::MouseEvent::Type::MouseDown, event, self, [self scrollView], Web::UIEvents::MouseButton::Primary);
@@ -1600,6 +1601,7 @@ static void copy_data_to_clipboard(StringView data, NSPasteboardType pasteboard_
 
 - (void)rightMouseDown:(NSEvent*)event
 {
+    NSLog(@"!!! rightMouseDown");
     [[self window] makeFirstResponder:self];
 
     auto mouse_event = Ladybird::ns_event_to_mouse_event(Web::MouseEvent::Type::MouseDown, event, self, [self scrollView], Web::UIEvents::MouseButton::Secondary);
@@ -1623,6 +1625,7 @@ static void copy_data_to_clipboard(StringView data, NSPasteboardType pasteboard_
     if (event.buttonNumber != 2)
         return;
 
+    NSLog(@"!!! otherMouseDown");
     [[self window] makeFirstResponder:self];
 
     auto mouse_event = Ladybird::ns_event_to_mouse_event(Web::MouseEvent::Type::MouseDown, event, self, [self scrollView], Web::UIEvents::MouseButton::Middle);
